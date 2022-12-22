@@ -1,9 +1,8 @@
-require 'byebug'
-
 class Board
 
     def initialize
         @rows = Array.new(8) {Array.new(8,4)}
+
     end
 
     def [](pos)
@@ -28,8 +27,7 @@ class Board
     end
 
     def valid_pos?(pos)
-
-
+        pos.all? { |piece| piece.between?(0,7) }
     end
 
     def add_piece(piece, pos)

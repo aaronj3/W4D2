@@ -1,17 +1,18 @@
 require_relative 'piece'
 require_relative 'slideable'
+require 'colorize'
+
 
 class Bishop < Piece
-    def symbol
-        :B
-    end
-
     include Slideable
+
+    def symbol
+        "♗".chomp
+        # .colorize(color)
+    end
 
     private
     def move_dirs
-        possible_dirs = Slideable.diagonal_dirs
-        possible_moves =
-
+        diagonal_dirs
     end
 end

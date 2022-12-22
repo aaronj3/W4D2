@@ -1,9 +1,14 @@
 require_relative "piece"
+require_relative 'stepable'
+require 'colorize'
+
 
 class Knight < Piece
 include Stepable
+
     def symbol
-        :Kn
+        '♘'.chomp
+        # .colorize(color)
     end
 
     private

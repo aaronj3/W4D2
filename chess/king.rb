@@ -1,15 +1,18 @@
 require_relative 'piece'
-require_relative 'module'
+require_relative 'stepable'
+require 'colorize'
+
 
 class King < Piece
-include Stepable
+    include Stepable
+
     def symbol
-        :K
+        '♕'.chomp
     end
 
     private
-    def move_dirs
-        return [
+    def move_diffs
+        [
             [1,0],
             [0,1],
             [1,1],
